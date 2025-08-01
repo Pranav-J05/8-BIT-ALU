@@ -1,0 +1,67 @@
+----------------------------------------------------------------------------------
+-- Company: 
+-- Engineer: 
+-- 
+-- Create Date:    16:52:14 07/31/2025 
+-- Design Name: 
+-- Module Name:    bit_8_alu_be - Behavioral 
+-- Project Name: 
+-- Target Devices: 
+-- Tool versions: 
+-- Description: 
+--
+-- Dependencies: 
+--
+-- Revision: 
+-- Revision 0.01 - File Created
+-- Additional Comments: 
+--
+----------------------------------------------------------------------------------
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+-- Uncomment the following library declaration if using
+-- arithmetic functions with Signed or Unsigned values
+use IEEE.NUMERIC_STD.ALL;
+
+-- Uncomment the following library declaration if instantiating
+-- any Xilinx primitives in this code.
+--library UNISIM;
+--use UNISIM.VComponents.all;
+
+entity bit_8_alu_be is
+    Port ( inp : in  STD_LOGIC_VECTOR (2 downto 0);
+           a : in  STD_LOGIC_VECTOR (7 downto 0);
+           b : in  STD_LOGIC_VECTOR (7 downto 0);
+           y : out  STD_LOGIC_VECTOR (7 downto 0));
+end bit_8_alu_be;
+
+architecture Behavioral of bit_8_alu_be is
+
+begin
+
+process (inp , a ,b) is
+begin 
+if( inp = "000" ) then
+y <= a+b ;
+elsif( inp = "001") then
+y <= a-b;
+elsif( inp = "010") then
+y <= '0' & a(7 downto 1);
+elsif( inp = "011") then
+y <= a(6 downto 0) & '0';
+elsif( inp = "100") then
+y <= a xor b;
+elsif( inp = "101") then
+y <= not a;
+elsif( inp = "110") then
+y <= a and b;
+elsif( inp = "111") then
+y <= a or b;
+end if;
+end process;
+
+
+
+end Behavioral;
+
