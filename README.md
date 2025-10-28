@@ -92,18 +92,3 @@ This confirms correct functioning of all supported ALU operations.
 | 111 | A OR B    | `00001111`                               |
 
 *Note: Values are in binary/hex format as per VHDL interpretation.*
-
----
-
-## 👨‍💻 Author
-
-Designed by **[Your Name Here]**  
-For academic purposes and personal learning in VHDL & digital design.
-
----
-
-## 📄 License
-
-This project is free for academic use. Attribution is appreciated for reuse or extension.
-
----
